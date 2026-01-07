@@ -1,0 +1,310 @@
+:root {
+  --bg: #0e0e0e;
+  --text: #ffffff;
+  --muted: #8f8f89;
+  --accent: #1e40af;
+  --radius: 12px;
+  --container: 1100px;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  
+}
+
+/* ===== FLOATING BACKGROUND ===== */
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(14,14,14,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
+  max-width: var(--container);
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+}
+.logo span { color: var(--muted); }
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+/* ===== HERO ===== */
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Video screen ko fully cover kare */
+  z-index: 0;              /* Content ke neeche rahe */
+  opacity: 0.25;           /* Thoda dark background look */
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 720px;
+  animation: slideUp 1.2s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* From Uiverse.io by joe-watson-sbf */ 
+.btn {
+   height: 50px;
+  width: 200px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  /* border-radius: 30px; */
+  color: #333;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+   z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+  
+  
+}
+.btn a{
+  text-decoration: none;
+    color: #d3d7ff;
+
+
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #101114;
+  transition: 0.5s ease;
+}
+.btn:hover {
+  color: #1212f2;
+  transition-delay: 0.5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #1e40af;
+  transition: 0.2s ease;
+  z-index: -1;
+  border-radius:50px ;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+
+/* From Uiverse.io by Gaurav-WebDev */ 
+.button {
+  height: 50px;
+  width: 200px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+.btn-txt a{
+    text-decoration: none;
+  color: #fff;
+}
+
+.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #333;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.button:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #1e40af;
+  border: none;
+}
+
+.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 50px;
+}
+
+.social-link {
+  font-size: 1.6rem;
+  color: var(--muted);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.social-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0px transparent;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Default hover glow — disabled until icon color appears */
+.social-link:hover {
+  transform: scale(1.3);
+}
+
+/* === Individual platform glow colors === */
+.social-link.insta:hover {
+  color: #E4405F;
+  text-shadow: 0 0 12px #E4405F, 0 0 24px #E4405F;
+}
+
+.social-link.fb:hover {
+  color: #1877F2;
+  text-shadow: 0 0 12px #1877F2, 0 0 24px #1877F2;
+}
+
+.social-link.ln:hover {
+  color: #0A66C2;
+  text-shadow: 0 0 12px #0A66C2, 0 0 24px #0A66C2;
+}
+
+.social-link.fv:hover {
+  color: #1DBF73;
+  text-shadow: 0 0 12px #1DBF73, 0 0 24px #1DBF73;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero-title { font-size: 2rem; }
+  .hero-sub { font-size: 0.9rem; }
+}
+
+

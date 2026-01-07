@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoDiX | Digital Web Studio</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="#" class="logo">Do<span>DiX</span></a>
+        <nav class="nav-links">
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html" class="btn-outline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source
+          src="assets/Generate_a_attractive_202510111053_nc00h.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div class="hero-content">
+        <h1 class="hero-title">
+          We Build Intelligent Web Experiences for the Future.
+        </h1>
+        <p class="hero-sub">
+          DoDiX merges creativity with technology — crafting AI-inspired,
+          responsive websites that perform beautifully and scale fast.
+        </p>
+
+        <div class="hero-btns">
+          <!-- From Uiverse.io by joe-watson-sbf -->
+          <button class="btn"><a href="services.html">Our Services</a></button>
+          <!-- From Uiverse.io by Gaurav-WebDev -->
+          <button class="button type1">
+            <span class="btn-txt"><a href="portfolio.html">view work</a></span>
+          </button>
+        </div>
+
+        <div class="social-icons">
+          <a
+            href="https://www.instagram.com/dodix.officials_?igsh=MWM5dTdzNWloMXdmeA=="
+            target="_blank"
+            class="social-link insta"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.facebook.com/share/17aZ6KKiGN/"
+            target="_blank"
+            class="social-link fb"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/dodix-dodix-14bb38388/"
+            target="_blank"
+            class="social-link ln"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.fiverr.com/dodix_dodix/build-a-responsive-and-modern-website-using-html-css-javascript?context_referrer=seller_page&ref_ctx_id=b7f8cf2495b54b5e93a76b59ddce1dca&pckg_id=1&pos=1&seller_online=true&imp_id=1b739336-26d8-4370-ad40-440470e0d493"
+            target="_blank"
+            class="social-link fv"
+            ><i class="fa-solid fa-briefcase"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/923213794233?text=Hi%20DoDiX%20Team%2C%20I%20want%20to%20discuss%20a%20project!"
+      class="whatsapp-float"
+      id="whatsappButton"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+      (function () {
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = [];
+            }
+            window.chatbase.q.push(arguments);
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q;
+              }
+              return (...args) => target(prop, ...args);
+            },
+          });
+        }
+        const onLoad = function () {
+          const script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "zIMT06qajOf3UrE1EeGN6";
+          script.domain = "www.chatbase.co";
+          document.body.appendChild(script);
+        };
+        if (document.readyState === "complete") {
+          onLoad();
+        } else {
+          window.addEventListener("load", onLoad);
+        }
+      })();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("whatsappButton");
+        let offsetX,
+          offsetY,
+          isDragging = false;
+
+        // prevent website scroll completely
+        document.body.style.overflow = "hidden";
+        document.body.style.userSelect = "none";
+
+        button.addEventListener("mousedown", (e) => {
+          e.preventDefault(); // stop scroll or select
+          isDragging = true;
+          offsetX = e.clientX - button.offsetLeft;
+          offsetY = e.clientY - button.offsetTop;
+          button.style.transition = "none";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          e.preventDefault(); // block scroll behavior
+          requestAnimationFrame(() => {
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+            button.style.right = "auto";
+            button.style.bottom = "auto";
+          });
+        });
+
+        document.addEventListener("mouseup", () => {
+          isDragging = false;
+          button.style.transition = "all 0.3s ease";
+        });
+      });
+    </script>
+
+    <script>
+      // Reveal animation on scroll
+      const cards = document.querySelectorAll(".card");
+      window.addEventListener("scroll", () => {
+        const trigger = window.innerHeight * 0.85;
+        cards.forEach((card) => {
+          const top = card.getBoundingClientRect().top;
+          if (top < trigger) card.classList.add("show");
+        });
+      });
+    </script>
+  </body>
+</html>

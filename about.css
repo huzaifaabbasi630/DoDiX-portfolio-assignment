@@ -1,0 +1,354 @@
+:root {
+  --bg: #0e0e0e;
+  --text: #ffffff;
+  --muted: #8f8f89;
+  --accent: #1e40af;
+  --radius: 12px;
+  --container: 1100px;
+}
+
+/* ===== ABOUT PAGE BACKGROUND ===== */
+body {
+  background: var(--bg);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(14,14,14,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
+  max-width: var(--container);
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+}
+.logo span { color: var(--muted); }
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  min-height: 100vh;
+  padding: 160px 20px 100px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.about-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.about-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.8rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  animation: fadeDown 1.2s ease forwards;
+}
+
+.about-sub {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto 60px;
+  animation: fadeUp 1.2s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* ===== ABOUT GRID ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 40px 25px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  backdrop-filter: blur(6px);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 18px;
+  transition: all 0.4s ease;
+}
+
+.card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== CARD HOVER EFFECT ===== */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: rgba(30, 64, 175, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
+}
+
+.card:hover i {
+  color: #fff;
+  text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-sub {
+    font-size: 0.95rem;
+  }
+}
+  
+
+
+/* ===== PAGE LOAD FADE ANIMATION (ABOUT) ===== */
+body {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: pageFadeIn 1.5s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Animation */
+.navbar {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: slideDown 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section Main Animation */
+.about-content {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: aboutFade 1.3s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes aboutFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+.about-content h1,
+.about-content h2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: headingFade 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes headingFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paragraphs */
+.about-content p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: paraFade 1.2s ease forwards;
+  animation-delay: 1.6s;
+}
+
+@keyframes paraFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skill Cards or Info Boxes */
+.about-cards {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardsFade 1.3s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes cardsFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA or Contact Button */
+.about-cta {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: ctaFade 1.3s ease forwards;
+  animation-delay: 2.4s;
+}
+
+@keyframes ctaFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.whatsapp-float {
+  position: sticky;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.8rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.5);
+  z-index: 9999;
+  cursor: grab;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+  background-color: #1ebe5d;
+}
+
+.whatsapp-float:active {
+  cursor: grabbing;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

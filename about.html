@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | DoDiX</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+
+  
+
+
+    <!-- HEADER (same as Home) -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">Do<span>DiX</span></a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a  href="about.html" class="active">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html" class="btn-outline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+      <div class="about-inner">
+        <h1 class="about-title">About DoDiX</h1>
+        <p class="about-sub">
+          At <strong>DoDiX</strong>, we are a passionate team of designers,
+          developers, and creators who build digital experiences that connect
+          ideas with technology.
+        </p>
+
+        <div class="about-grid">
+          <div class="card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Front-End Developer</h3>
+            <p>Crafting responsive, interactive web interfaces with HTML, CSS, and JavaScript.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Full Stack Developer</h3>
+            <p>Delivering complete, secure web applications with clean back-end logic.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-palette"></i>
+            <h3>Graphic Designer</h3>
+            <p>Designing stunning visuals that define your brand identity and style.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-film"></i>
+            <h3>Video Editor</h3>
+            <p>Creating cinematic edits that capture attention and emotion.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-brands fa-shopify"></i>
+            <h3>Shopify Developer</h3>
+            <p>Building fast, user-friendly Shopify stores that convert and grow.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-brands fa-wordpress"></i>
+            <h3>WordPress Developer</h3>
+            <p>Custom WordPress themes built for performance and style.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    
+    <a
+  href="https://wa.me/923213794233?text=Hi%20DoDiX%20Team%2C%20I%20want%20to%20discuss%20a%20project!"
+  class="whatsapp-float"
+  id="whatsappButton"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("whatsappButton");
+    let offsetX, offsetY, isDragging = false;
+
+    // prevent website scroll completely
+    // document.body.style.overflow = "hidden";
+    document.body.style.userSelect = "none";
+
+    button.addEventListener("mousedown", (e) => {
+      e.preventDefault(); // stop scroll or select
+      isDragging = true;
+      offsetX = e.clientX - button.offsetLeft;
+      offsetY = e.clientY - button.offsetTop;
+      button.style.transition = "none";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault(); // block scroll behavior
+      requestAnimationFrame(() => {
+        const x = e.clientX - offsetX;
+        const y = e.clientY - offsetY;
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+        button.style.right = "auto";
+        button.style.bottom = "auto";
+      });
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      button.style.transition = "all 0.3s ease";
+    });
+  });
+</script>
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+window.chatbase=(...arguments)=>{
+if(!window.chatbase.q){window.chatbase.q=[]}
+window.chatbase.q.push(arguments)};
+window.chatbase=new Proxy(window.chatbase,{
+get(target,prop){if(prop==="q"){return target.q}
+return(...args)=>target(prop,...args)}})}
+const onLoad=function(){
+const script=document.createElement("script");
+script.src="https://www.chatbase.co/embed.min.js";
+script.id="zIMT06qajOf3UrE1EeGN6"; 
+script.domain="www.chatbase.co";
+document.body.appendChild(script)};
+if(document.readyState==="complete"){onLoad()}
+else{window.addEventListener("load",onLoad)}})();
+</script>
+
+
+
+    <script>
+      // Reveal animation on scroll
+      const cards = document.querySelectorAll(".card");
+      window.addEventListener("scroll", () => {
+        const trigger = window.innerHeight * 0.85;
+        cards.forEach((card) => {
+          const top = card.getBoundingClientRect().top;
+          if (top < trigger) card.classList.add("show");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,320 @@
+:root {
+  --bg: #0e0e0e;
+  --text: #ffffff;
+  --muted: #8f8f89;
+  --accent: #1e40af;
+  --radius: 12px;
+  --container: 1100px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ===== HEADER (same as main) ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(14,14,14,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-inner {
+  max-width: var(--container);
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--muted);
+}
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+.btn-outline {
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  color: var(--accent);
+  transition: all 0.3s ease;
+
+  
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+/* ===== PORTFOLIO ===== */
+.portfolio {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* FILTER BUTTONS */
+.filter-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.filter-btns button {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.filter-btns button:hover,
+.filter-btns button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* PROJECT GRID */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.project-card:hover img {
+  transform: scale(1.1);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 64, 175, 0.85);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+.project-card:hover .overlay {
+  opacity: 1;
+}
+.overlay h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.overlay p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+.view-btn {
+  background: #fff;
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.view-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* COMING SOON */
+.coming-soon {
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coming-soon .overlay {
+  opacity: 1;
+  background: rgba(14, 14, 14, 0.7);
+  border: 1px dashed var(--muted);
+}
+
+/* CTA BOX */
+.cta-box {
+  margin-top: 80px;
+  background: rgba(30, 64, 175, 0.1);
+  padding: 40px 20px;
+  border-radius: var(--radius);
+}
+.cta-box h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #16379a;
+}
+/* ===== PAGE LOAD FADE ANIMATION ===== */
+body {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: pageFadeIn 1.5s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: make content appear in a smooth sequence */
+.portfolio .section-title,
+.portfolio .section-sub,
+.filter-btns,
+.portfolio-grid,
+.cta-box {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.portfolio .section-title { animation-delay: 0.3s; }
+.portfolio .section-sub { animation-delay: 0.5s; }
+.filter-btns { animation-delay: 0.7s; }
+.portfolio-grid { animation-delay: 0.9s; }
+.cta-box { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+       
+.coming-soon {
+  background: rgba(30, 64, 175, 0.1);
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.coming-soon:hover {
+  background: rgba(30, 64, 175, 0.2);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(30, 64, 175, 0.4);
+  transform: translateY(-5px);
+}
+
+
+
+.whatsapp-float {
+  position: sticky;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.8rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.5);
+  z-index: 9999;
+  cursor: grab;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+  background-color: #1ebe5d;
+}
+
+.whatsapp-float:active {
+  cursor: grabbing;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

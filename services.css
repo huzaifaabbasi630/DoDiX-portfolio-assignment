@@ -1,0 +1,412 @@
+:root {
+  --bg: #0e0e0e;
+  --text: #ffffff;
+  --muted: #8f8f89;
+  --accent: #1e40af;
+  --radius: 12px;
+  --container: 1100px;
+}
+
+/* ===== BACKGROUND ===== */
+body {
+  background: var(--bg);
+  background-size: 200% 200%;
+  animation: moveBg 10s ease infinite;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+@keyframes moveBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+/* *    ===== NAVBAR ===== */ */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(14,14,14,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
+  max-width: var(--container);
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+}
+.logo span { color: var(--muted); }
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover { color: var(--accent); }
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+
+/* ===== SECTION ===== */
+.services {
+  padding: 160px 20px 100px;
+  text-align: center;
+}
+
+.services-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.services-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  animation: fadeDown 1s ease forwards;
+}
+
+.services-sub {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  animation: fadeUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* ===== SERVICE OVERLAY ===== */
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30,64,175,0.95), rgba(30,64,175,0.8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s ease;
+  text-align: center;
+  color: #fff;
+}
+
+.service-overlay h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  letter-spacing: 0.5px;
+}
+
+.overlay-btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.overlay-btn:hover {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* HOVER ANIMATION */
+.service-card:hover .service-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Add subtle blue glow on hover */
+.service-card:hover {
+  box-shadow: 0 0 25px rgba(30, 64, 175, 0.3);
+  transform: translateY(-8px);
+}
+
+
+/* ===== GRID ===== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 40px 25px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 64, 175, 0.2),
+    rgba(30, 64, 175, 0)
+  );
+  transition: all 0.3s ease;
+}
+
+.service-card:hover::before {
+  top: 0;
+}
+
+.service-card i {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 18px;
+  transition: all 0.4s ease;
+}
+
+.service-card h3 {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 0 0 25px rgba(30, 64, 175, 0.3);
+}
+
+.service-card:hover i {
+  color: #fff;
+  text-shadow: 0 0 10px var(--accent), 0 0 25px var(--accent);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .services-title { font-size: 2.3rem; }
+  .services-sub { font-size: 0.95rem; }
+}
+
+
+
+/* ===== PAGE LOAD FADE ANIMATION (SERVICES) ===== */
+body {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: pageFadeIn 1.5s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar Animation */
+.navbar {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: slideDown 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Services Section Wrapper */
+.services-section {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: servicesFade 1.3s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes servicesFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Title & Subtext */
+.section-title {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: titleFade 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.section-sub {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: subFade 1s ease forwards;
+  animation-delay: 1.4s;
+}
+
+@keyframes titleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Services Cards Animation */
+.service-card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardFade 1.2s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 1.8s; }
+.service-card:nth-child(2) { animation-delay: 2.0s; }
+.service-card:nth-child(3) { animation-delay: 2.2s; }
+.service-card:nth-child(4) { animation-delay: 2.4s; }
+.service-card:nth-child(5) { animation-delay: 2.6s; }
+.service-card:nth-child(6) { animation-delay: 2.8s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA (Contact Us Button or Section) */
+.services-cta {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: ctaFade 1.2s ease forwards;
+  animation-delay: 3.2s;
+}
+
+@keyframes ctaFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.whatsapp-float {
+  position: sticky;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.8rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.5);
+  z-index: 9999;
+  cursor: grab;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+  background-color: #1ebe5d;
+}
+
+.whatsapp-float:active {
+  cursor: grabbing;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

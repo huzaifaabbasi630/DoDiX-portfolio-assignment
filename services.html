@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | DoDiX</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="services.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">Do<span>DiX</span></a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html" class="btn-outline">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SERVICES SECTION -->
+    <section class="services">
+      <div class="services-inner">
+        <h1 class="services-title">Our Expertise</h1>
+        <p class="services-sub">
+          From pixel-perfect designs to full-stack development — DoDiX delivers
+          professional, fast, and future-ready digital solutions.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+  <i class="fa-solid fa-laptop-code"></i>
+  <h3>Web Development</h3>
+  <p>We build responsive and high-performance websites using modern frameworks and clean code.</p>
+
+  <!-- Overlay Box -->
+  <div class="service-overlay">
+    <h4>Let’s Build Something Amazing!</h4>
+    <a href="contact.html" class="overlay-btn">Contact Now</a>
+  </div>
+</div>
+
+
+          <div class="service-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>App Design</h3>
+            <p>
+              Our UI/UX experts design stunning mobile app experiences focused
+              on usability and engagement.
+            </p>
+            <!-- Overlay Box -->
+  <div class="service-overlay">
+    <h4>Let’s Build Something Amazing!</h4>
+    <a href="contact.html" class="overlay-btn">Contact Now</a>
+  </div>
+          </div>
+
+          <div class="service-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>AI Integration</h3>
+            <p>
+              We integrate AI-powered solutions to make your product smarter,
+              faster, and more efficient.
+            </p>
+            <!-- Overlay Box -->
+  <div class="service-overlay">
+    <h4>Let’s Build Something Amazing!</h4>
+    <a href="contact.html" class="overlay-btn">Contact Now</a>
+  </div>
+          </div>
+
+          <div class="service-card">
+            <i class="fa-solid fa-palette"></i>
+            <h3>Graphic Design</h3>
+            <p>
+              We bring your brand to life with modern visuals, creative logos,
+              and professional marketing graphics.
+            </p>
+            <!-- Overlay Box -->
+  <div class="service-overlay">
+    <h4>Let’s Build Something Amazing!</h4>
+    <a href="contact.html" class="overlay-btn">Contact Now</a>
+  </div>
+          </div>
+
+          <div class="service-card">
+            <i class="fa-solid fa-store"></i>
+            <h3>E-Commerce Solutions</h3>
+            <p>
+              Build robust online stores powered by Shopify or WooCommerce that
+              sell — beautifully and fast.
+            </p>
+            <!-- Overlay Box -->
+  <div class="service-overlay">
+    <h4>Let’s Build Something Amazing!</h4>
+    <a href="contact.html" class="overlay-btn">Contact Now</a>
+  </div>
+          </div>
+
+          <div class="service-card">
+            <i class="fa-solid fa-bullhorn"></i>
+            <h3>Digital Marketing</h3>
+            <p>
+              Boost visibility with our SEO, SMM, and paid campaign strategies
+              that drive real results.
+            </p>
+            <!-- Overlay Box -->
+  <div class="service-overlay">
+    <h4>Let’s Build Something Amazing!</h4>
+    <a href="contact.html" class="overlay-btn">Contact Now</a>
+  </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <a
+  href="https://wa.me/923213794233?text=Hi%20DoDiX%20Team%2C%20I%20want%20to%20discuss%20a%20project!"
+  class="whatsapp-float"
+  id="whatsappButton"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("whatsappButton");
+    let offsetX, offsetY, isDragging = false;
+
+    // prevent website scroll completely
+    // document.body.style.overflow = "hidden";
+    document.body.style.userSelect = "none";
+
+    button.addEventListener("mousedown", (e) => {
+      e.preventDefault(); // stop scroll or select
+      isDragging = true;
+      offsetX = e.clientX - button.offsetLeft;
+      offsetY = e.clientY - button.offsetTop;
+      button.style.transition = "none";
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      e.preventDefault(); // block scroll behavior
+      requestAnimationFrame(() => {
+        const x = e.clientX - offsetX;
+        const y = e.clientY - offsetY;
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+        button.style.right = "auto";
+        button.style.bottom = "auto";
+      });
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      button.style.transition = "all 0.3s ease";
+    });
+  });
+</script>
+
+
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+window.chatbase=(...arguments)=>{
+if(!window.chatbase.q){window.chatbase.q=[]}
+window.chatbase.q.push(arguments)};
+window.chatbase=new Proxy(window.chatbase,{
+get(target,prop){if(prop==="q"){return target.q}
+return(...args)=>target(prop,...args)}})}
+const onLoad=function(){
+const script=document.createElement("script");
+script.src="https://www.chatbase.co/embed.min.js";
+script.id="zIMT06qajOf3UrE1EeGN6"; 
+script.domain="www.chatbase.co";
+document.body.appendChild(script)};
+if(document.readyState==="complete"){onLoad()}
+else{window.addEventListener("load",onLoad)}})();
+</script>
+</body>
+</html>
+
+
+    <!-- Script -->
+    <script>
+      const cards = document.querySelectorAll(".service-card");
+      window.addEventListener("scroll", () => {
+        const trigger = window.innerHeight * 0.85;
+        cards.forEach((card, i) => {
+          const top = card.getBoundingClientRect().top;
+          if (top < trigger) {
+            card.classList.add("show");
+            card.style.transitionDelay = `${i * 0.15}s`;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

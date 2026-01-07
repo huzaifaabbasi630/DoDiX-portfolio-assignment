@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | DoDiX</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">Do<span>DiX</span></a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html" class="btn-outline active">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <div class="container contact-container">
+        <!-- LEFT SIDE -->
+        <div class="contact-left">
+          <h2 class="section-title">Let's Build Something Great Together</h2>
+          <p class="section-subtitle">
+            Have an idea or project in mind? Fill out the form and our team will get back to you soon.
+          </p>
+
+          <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> contact.dodix@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +92 321 3794233</p>
+            <p><i class="fa-solid fa-location-dot"></i> Karachi, Pakistan</p>
+          </div>
+
+          <div class="social-icons">
+            <a href="https://www.instagram.com/dodix.officials_?igsh=MWM5dTdzNWloMXdmeA==" target="_blank" class="social-link insta"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/17aZ6KKiGN/" target="_blank" class="social-link fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/dodix-dodix-14bb38388/" target="_blank" class="social-link ln"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.fiverr.com/dodix_dodix/build-a-responsive-and-modern-website-using-html-css-javascript?context_referrer=seller_page&ref_ctx_id=b7f8cf2495b54b5e93a76b59ddce1dca&pckg_id=1&pos=1&seller_online=true&imp_id=1b739336-26d8-4370-ad40-440470e0d493" target="_blank" class="social-link fv"><i class="fa-solid fa-briefcase"></i></a>
+          </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-right">
+          <form class="contact-form" action="https://formspree.io/f/xjkaekdn" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="email" name="email" placeholder="Your Email" required />
+            </div>
+
+            <input type="text" name="subject" placeholder="Subject (optional)" />
+
+            <!-- 🔹 Service Selection -->
+<div class="select-box">
+  <label for="service">Choose a Service</label>
+  <select name="service" id="service" required>
+    <option value="" disabled selected>-- Select a Service --</option>
+    <option value="Web Development">Web Development</option>
+    <option value="Graphic Design">Graphic Design</option>
+    <option value="Video Editing">Video Editing</option>
+    <option value="App Development">App Development</option>
+    <option value="UI/UX Design">UI/UX Design</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
+
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA END -->
+    <div class="cta-end">
+      <p>Your ideas deserve the perfect execution — Let’s start today!</p>
+    </div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a
+      href="https://wa.me/923213794233?text=Hi%20DoDiX%20Team%2C%20I%20want%20to%20discuss%20a%20project!"
+      class="whatsapp-float"
+      id="whatsappButton"
+      target="_blank"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const button = document.getElementById("whatsappButton");
+        let offsetX, offsetY, isDragging = false;
+        document.body.style.userSelect = "none";
+
+        button.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          isDragging = true;
+          offsetX = e.clientX - button.offsetLeft;
+          offsetY = e.clientY - button.offsetTop;
+          button.style.transition = "none";
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          e.preventDefault();
+          requestAnimationFrame(() => {
+            const x = e.clientX - offsetX;
+            const y = e.clientY - offsetY;
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+            button.style.right = "auto";
+            button.style.bottom = "auto";
+          });
+        });
+
+        document.addEventListener("mouseup", () => {
+          isDragging = false;
+          button.style.transition = "all 0.3s ease";
+        });
+      });
+    </script>
+
+    <!-- CHATBASE SCRIPT -->
+    <script>
+      (function(){
+        if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+          window.chatbase=(...arguments)=>{
+            if(!window.chatbase.q){window.chatbase.q=[]}
+            window.chatbase.q.push(arguments)};
+            window.chatbase=new Proxy(window.chatbase,{
+              get(target,prop){if(prop==="q"){return target.q}
+              return(...args)=>target(prop,...args)}})}
+          const onLoad=function(){
+            const script=document.createElement("script");
+            script.src="https://www.chatbase.co/embed.min.js";
+            script.id="zIMT06qajOf3UrE1EeGN6";
+            script.domain="www.chatbase.co";
+            document.body.appendChild(script)};
+          if(document.readyState==="complete"){onLoad()}
+          else{window.addEventListener("load",onLoad)}
+      })();
+    </script>
+  </body>
+</html>
