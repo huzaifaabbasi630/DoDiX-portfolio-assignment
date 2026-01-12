@@ -318,3 +318,155 @@ body {
     transform: translateY(0);
   }
 }
+/* ================= PORTFOLIO RESPONSIVE ================= */
+
+/* ===== Tablets (iPad etc) ===== */
+@media (max-width: 1024px) {
+  :root {
+    --container: 950px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .portfolio {
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  .portfolio-grid {
+    gap: 22px;
+  }
+}
+
+/* ===== Mobile Devices ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .nav-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  /* Portfolio Section */
+  .portfolio {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .section-sub {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  /* Filter Buttons */
+  .filter-btns {
+    gap: 8px;
+  }
+
+  .filter-btns button {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* Project Grid */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card img {
+    height: 200px;
+  }
+
+  /* Overlay text */
+  .overlay h3 {
+    font-size: 1.2rem;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+  }
+
+  /* CTA */
+  .cta-box {
+    margin-top: 60px;
+    padding: 35px 18px;
+  }
+
+  .cta-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media (max-width: 480px) {
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+  }
+
+  .filter-btns button {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+
+  .overlay h3 {
+    font-size: 1.1rem;
+  }
+
+  .overlay p {
+    font-size: 0.85rem;
+  }
+
+  .cta-box h2 {
+    font-size: 1.35rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
