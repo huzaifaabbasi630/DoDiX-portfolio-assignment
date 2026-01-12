@@ -410,3 +410,138 @@ body {
   }
 }
 
+
+/* ================= SERVICES RESPONSIVE ================= */
+
+/* ===== Tablets ===== */
+@media (max-width: 1024px) {
+  :root {
+    --container: 950px;
+  }
+
+  .services {
+    padding: 140px 18px 80px;
+  }
+
+  .services-title {
+    font-size: 2.5rem;
+  }
+
+  .services-sub {
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 35px 22px;
+  }
+}
+
+/* ===== Mobile Devices ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .nav-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  /* Services Section */
+  .services {
+    padding: 120px 14px 70px;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .services-sub {
+    font-size: 0.95rem;
+    margin-bottom: 45px;
+  }
+
+  /* Grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* Cards */
+  .service-card {
+    padding: 30px 20px;
+  }
+
+  .service-card i {
+    font-size: 2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Overlay */
+  .service-overlay h4 {
+    font-size: 1rem;
+  }
+
+  .overlay-btn {
+    padding: 7px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* WhatsApp */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media (max-width: 480px) {
+
+  .services-title {
+    font-size: 1.7rem;
+  }
+
+  .services-sub {
+    font-size: 0.9rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+  }
+
+  .overlay-btn {
+    font-size: 0.85rem;
+  }
+
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
