@@ -21,19 +21,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- HEADER -->
     <header class="navbar">
-      <div class="container nav-inner">
-        <a href="#" class="logo">Do<span>DiX</span></a>
-        <nav class="nav-links">
-          <a class="active" href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="contact.html" class="btn-outline">Contact</a>
-        </nav>
-      </div>
-    </header>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">Do<span>DiX</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html" class="btn-outline">Contact</a>
+    </nav>
+
+    <!-- HAMBURGER ICON (YAHAN ADD KARO) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -185,5 +194,23 @@
         });
       });
     </script>
+   <script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("show");
+  });
+
+  // Close menu when link is clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("show");
+    });
+  });
+</script>
+
   </body>
 </html>
