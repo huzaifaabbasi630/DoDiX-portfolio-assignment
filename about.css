@@ -352,3 +352,123 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ================= RESPONSIVE FIXES ================= */
+
+/* ===== Tablets & Small Screens ===== */
+@media (max-width: 1024px) {
+  :root {
+    --container: 920px;
+  }
+
+  .nav-inner {
+    width: 95%;
+  }
+
+  .about {
+    padding: 140px 16px 80px;
+  }
+
+  .about-title {
+    font-size: 2.4rem;
+  }
+
+  .about-sub {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 35px 22px;
+  }
+}
+
+/* ===== Mobile Devices ===== */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  /* About Section */
+  .about {
+    padding: 130px 14px 70px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-sub {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Cards */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card i {
+    font-size: 1.8rem;
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ===== Extra Small Devices ===== */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.7rem;
+  }
+
+  .about-sub {
+    font-size: 0.9rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .btn-outline {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.88rem;
+  }
+
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
+
