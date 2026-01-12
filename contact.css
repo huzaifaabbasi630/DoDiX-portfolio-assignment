@@ -315,3 +315,131 @@ body {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* ================= RESPONSIVE IMPROVEMENTS ================= */
+
+/* ===== Tablets ===== */
+@media (max-width: 1024px) {
+  :root {
+    --container: 900px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-container {
+    gap: 40px;
+  }
+}
+
+/* ===== Mobile Devices ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .nav-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 110px 14px 60px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .contact-left,
+  .contact-right {
+    text-align: center;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* Form */
+  .form-group {
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+
+  .btn-primary {
+    padding: 13px 0;
+    font-size: 0.95rem;
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media (max-width: 480px) {
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+  .social-link {
+    font-size: 1.2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-float {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
